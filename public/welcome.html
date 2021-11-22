@@ -11,22 +11,22 @@
 <body></body>
 <script>
 
-    const query = window.location.search.substring(1);
-    const token = query.split("access_token=")[1];
+    // const query = window.location.search.substring(1);
+    // const token = query.split("access_token=")[1];
 
-    fetch("https://api.github.com/user", {
-        headers: {
-            Accept: "application/vnd.github.v3+json",
-            Authorization: "token " + token,
-        },
-    })
-        // Parse the response as JSON
-        .then((res) => res.json())
-        .then((res) => {
-            const nameNode = document.createTextNode(`Welcome, ${res.name}`);
-            document.body.appendChild(nameNode);
-            console.log(res);
-        });
+    // fetch("https://api.github.com/user", {
+    //     headers: {
+    //         Accept: "application/vnd.github.v3+json",
+    //         Authorization: "token " + token,
+    //     },
+    // })
+    //     // Parse the response as JSON
+    //     .then((res) => res.json())
+    //     .then((res) => {
+    //         const nameNode = document.createTextNode(`Welcome, ${res.name}`);
+    //         document.body.appendChild(nameNode);
+    //         console.log(res);
+    //     });
 </script>
 
 </html>
