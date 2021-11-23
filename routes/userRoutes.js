@@ -1,5 +1,6 @@
 import express from "express";
 import * as userController from "../controllers/userController.js"
+import Auth from "../middleware/auth.js";
 
 const router = express.Router();
 
@@ -16,7 +17,7 @@ router.get(
 
 router.post("/logout", userController.user_logout);
 
-router.get("/profile", userController.user_getProfile);
+router.get("/profile", Auth, userController.user_getProfile);
 
 router.put("/profile", userController.user_updateProfile);
 
